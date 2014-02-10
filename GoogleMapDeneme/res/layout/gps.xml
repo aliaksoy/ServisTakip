@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnHaritadaGoster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/enlemIcerik"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="69dp"
+        android:text="Haritada Göster" />
+
+    <TextView
+        android:id="@+id/boylamIcerik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnHaritadaGoster"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="17dp"
+        android:text="Bulunamadı"
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/enlemIcerik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/boylamIcerik"
+        android:layout_below="@+id/boylamIcerik"
+        android:layout_marginTop="32dp"
+        android:text="Bulunamadı"
+        android:textSize="20dip" />
+
+    <Button
+        android:id="@+id/btnHesapla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnHaritadaGoster"
+        android:layout_below="@+id/btnHaritadaGoster"
+        android:layout_marginTop="38dp"
+        android:text="Mesafe Hesapla" />
+
+    <Button
+        android:id="@+id/btnCizgi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnHesapla"
+        android:layout_below="@+id/btnHesapla"
+        android:layout_marginTop="46dp"
+        android:text="Cizgi Denemesi" />
+
+</RelativeLayout>

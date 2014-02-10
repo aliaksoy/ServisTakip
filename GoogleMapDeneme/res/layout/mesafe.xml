@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/edtLatitute1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="66dp"
+        android:ems="10"
+        android:text="41.055667" />
+
+    <EditText
+        android:id="@+id/edtLong1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtLatitute1"
+        android:layout_below="@+id/edtLatitute1"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:text="28.948925" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtSonuc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnMesafeHesapla"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="62dp"
+        android:text="Sonuc" />
+
+    <Button
+        android:id="@+id/btnMesafeHesapla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtSonuc"
+        android:layout_alignLeft="@+id/edtLong1"
+        android:layout_marginLeft="30dp"
+        android:text="Hesapla" />
+
+    <EditText
+        android:id="@+id/edtLatitute2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:text="41.095815" />
+
+    <EditText
+        android:id="@+id/edtLong2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnMesafeHesapla"
+        android:layout_alignLeft="@+id/edtLatitute2"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:text="28.993128" />
+
+</RelativeLayout>
