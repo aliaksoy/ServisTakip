@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 
-//eclipse den git repositories
+//eclipse den git repositoriesss
 public class CizgiCekme extends FragmentActivity {
  
 private GoogleMap googleHarita;
