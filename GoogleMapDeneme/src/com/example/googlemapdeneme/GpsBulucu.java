@@ -1,5 +1,5 @@
 package com.example.googlemapdeneme;
-
+//deneme yorum
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
