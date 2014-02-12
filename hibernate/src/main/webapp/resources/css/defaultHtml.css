@@ -1,0 +1,362 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 20px;
+	padding: 0;
+	background: #FFFFFF;
+	font: normal .7em Tahoma, Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #000000;
+}
+
+p, blockquote, ol, ul {
+	line-height: 160%;
+}
+
+a {
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.outputText {
+	min-width:200px;
+	margin: 0 0 10px 0;
+	padding: 0;
+	background: #DCDCDC;
+	border: 5px;
+}
+
+/* Boxed */
+
+.boxed {
+	float: right;
+	width: 150px;
+	margin: 0 0 10px 0;
+	padding: 0;
+	background: #DCDCDC;
+	border: 5px;
+}
+
+.boxed .heading {
+	margin-top: 0;
+	padding: 8px 15px;
+	background: #1F1F21 url(../images/img3.gif) no-repeat center bottom;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+
+.boxed .content {
+	margin: 0;
+	padding: 5px 14px 10px 14px;
+}
+
+.boxed ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+.boxed li {
+	padding: 3px 0;
+	border-top: 1px dotted #1F1F21;
+}
+
+.boxed li.first {
+	border: none;
+}
+
+.boxed a {
+	padding-left: 10px;
+	background: url(../images/img4.gif) no-repeat left center;
+	text-decoration: none;
+}
+
+/* Wrapper */
+#bodyStil{
+	background: url(http://www.memoriescomplete.com/images/blog/Blog_Background_Circles_N_Swirls.jpg) no-repeat left center;
+	
+}
+#wrapper {
+	width: 868px;
+	margin: 0 auto;
+	
+}
+
+/* Header */
+
+
+#menu {
+	float: right;
+}
+#header {
+	float: left;
+	width: 200px;
+	height: 150px;
+	background: url(../images/img1.jpg);
+}
+
+#header h1 {
+	margin: 0;
+	padding: 43px 0 0 0;
+	text-align: center;
+	letter-spacing: -1px;
+	font-size: 3em;
+}
+
+#header h2 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+#header a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Pages */
+
+#pages {
+	float: right;
+	width: 568px;
+	height: 150px;
+	background: url(../images/img2.jpg);
+}
+
+#pages h2 {
+	display: none;
+}
+
+#pages ul {
+	float: right;
+	margin: 0;
+	padding: 10px 15px 0 0;
+	list-style: none;
+	line-height: normal;
+}
+
+#pages li {
+	display: inline;
+}
+
+#pages a {
+	padding-left: 2em;
+	text-decoration: none;
+	font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+	color: #666666;
+}
+
+#pages a:hover {
+	color: #FFFFFF;
+}
+
+/* Content */
+
+#content {
+	clear: both;
+	padding-top: 10px;
+}
+
+/* Posts */
+
+#posts {
+	float: left;
+	width: 700px;
+	background-color: #FAFAFA;
+	background-image:background: url(../images/bg/bg_kahve.png)repeat;
+	border: 5px; 
+}
+
+.post {
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+.post .title {
+	margin: 0;
+	font-size: 2em;
+}
+
+.post .posted {
+	margin-top: 0;
+	font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+	color: #999999;
+}
+
+.post .meta {
+	margin: 2em 0 3em 0;
+	border-top: 1px dotted #939A3C;
+	font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+	color: #999999;
+}
+
+.post .meta p {
+	margin: 0;
+}
+
+/* Archives */
+
+#archives {
+	float: right;
+	margin-left: 10px;
+}
+
+/* Search */
+
+#search {
+}
+
+#search .content {
+	padding-bottom: 12px;
+}
+
+#textfield1 {
+	width: 156px;
+	padding: 5px 5px;
+	border: 1px solid #000000;
+	font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+
+#submit1 {
+	display: none;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+	color: #999999;
+}
+
+#footer a {
+	color: #999999;
+}
+/* BUTONLARLA İLGİLİ KISIM*/
+.buttons a, .buttons button{
+    display:block;
+    float:left;
+    margin:0 7px 0 0;
+    background-color:#f5f5f5;
+    border:1px solid #dedede;
+    border-top:1px solid #eee;
+    border-left:1px solid #eee;
+
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:12px;
+    line-height:130%;
+    text-decoration:none;
+    font-weight:bold;
+    color:#565656;
+    cursor:pointer;
+    padding:5px 10px 6px 7px; /* Links */
+}
+.buttons button{
+    width:auto;
+    overflow:visible;
+    padding:4px 10px 3px 7px; /* IE6 */
+}
+.buttons button[type]{
+    padding:5px 10px 5px 7px; /* Firefox */
+    line-height:17px; /* Safari */
+}
+*:first-child+html button[type]{
+    padding:4px 10px 3px 7px; /* IE7 */
+}
+.buttons button img, .buttons a img{
+    margin:0 3px -3px 0 !important;
+    padding:0;
+    border:none;
+    width:16px;
+    height:16px;
+}
+
+/* STANDARD */
+
+button:hover, .buttons a:hover{
+    background-color:#dff4ff;
+    border:1px solid #c2e1ef;
+    color:#336699;
+}
+.buttons a:active{
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+}
+
+/* POSITIVE */
+
+button.positive, .buttons a.positive{
+    color:#529214;
+}
+.buttons a.positive:hover, button.positive:hover{
+    background-color:#E6EFC2;
+    border:1px solid #C6D880;
+    color:#529214;
+}
+.buttons a.positive:active{
+    background-color:#529214;
+    border:1px solid #529214;
+    color:#fff;
+}
+
+/* NEGATIVE */
+
+.buttons a.negative, button.negative{
+    color:#d12f19;
+}
+.buttons a.negative:hover, button.negative:hover{
+    background:#fbe3e4;
+    border:1px solid #fbc2c4;
+    color:#d12f19;
+}
+.buttons a.negative:active{
+    background-color:#d12f19;
+    border:1px solid #d12f19;
+    color:#fff;
+}
+
+/* REGULAR */
+
+button.regular, .buttons a.regular{
+    color:#336699;
+}
+
+.buttons a.regular:hover, button.regular:hover{
+    background-color:#dff4ff;
+    border:1px solid #c2e1ef;
+    color:#336699;
+}
+.buttons a.regular:active{
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+}
+
+/*Primefaces*/
+.ui-widget-content .ui-icon-saveButton {
+    background-image: url("../small/apply2png");
+}

@@ -1,0 +1,151 @@
+	@SuppressWarnings("unchecked")
+	@Produces
+	@Named("futbolcuListesi")	
+	public List<Futbolcu> populateFutbolcuListesi() {
+		List<Futbolcu> futbolcuListesi = entityManager.createQuery(
+				"select distinct c from Futbolcu ")
+				.getResultList();
+		return futbolcuListesi;
+	}*/
+	private void ornekVerileriYarat() {
+
+		adListesi.add("Hasan");
+		adListesi.add("Mehmet");
+		adListesi.add("Recep");
+		adListesi.add("Ramazan");
+		adListesi.add("Hagi");
+		
+		// FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Sample warn message", "Watch out for PrimeFaces!"));  
+		
+		soyadListesi.add("Çelik");
+		soyadListesi.add("Öz");
+		soyadListesi.add("Aydın");
+		soyadListesi.add("Bektaş");
+		soyadListesi.add("Bekir");
+		
+	}
+	package org.sahin.home;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
+import javax.inject.Named;
+
+import org.sahin.model.Futbolcu;
+import org.sahin.persistence.HomeBean;
+import org.sahin.util.NumberUtil;
+ 
+@Named
+@RequestScoped
+public class FutbolcuHome extends HomeBean<Futbolcu>{
+	private static final long serialVersionUID = 1L;
+
+	private List<Futbolcu> futbolcuListesi=new ArrayList<Futbolcu>();
+	
+	Futbolcu secilenFutbolcu;
+	
+	
+	
+	
+	@Override	
+	public void onPageLoad(){
+	if(!	FacesContext.getCurrentInstance().isPostback()){
+		System.out.println("onPageLoad");
+		initConversation();	
+		createData();
+		fillObjects();
+		oyunculariCek();
+	}
+	}
+	@SuppressWarnings("unchecked")
+	private void oyunculariCek() {
+		futbolcuListesi = entityManager.createQuery("select c from Futbolcu c ").getResultList();
+			
+	}
+	public List<Futbolcu> getFutbolcuListesi() {
+		return futbolcuListesi;
+	}
+	public void setFutbolcuListesi(List<Futbolcu> futbolcuListesi) {
+		this.futbolcuListesi = futbolcuListesi;
+	}
+		
+
+	public Futbolcu getSecilenFutbolcu() {
+		return secilenFutbolcu;
+	}
+	public void setSecilenFutbolcu(Futbolcu secilenFutbolcu) {
+		this.secilenFutbolcu = secilenFutbolcu;
+	}
+
+
+	List<String> adListesi=new ArrayList<String>();
+	List<String> soyadListesi=new ArrayList<String>();
+	
+	boolean verilerYaratildimi=false;
+
+
+	public boolean isVerilerYaratildimi() {
+		return verilerYaratildimi;
+	}
+
+	public void setVerilerYaratildimi(boolean verilerYaratildimi) {
+		this.verilerYaratildimi = verilerYaratildimi;
+	}
+	
+	public void createData() {
+		oyunculariCek();
+		if (!isVerilerYaratildimi()) {
+			entityManager.getTransaction().begin();
+			try {
+				ornekVerileriYarat();
+				
+				for (int i = 0; i < 5; i++) {
+					futbolculariYarat(getRandomAd(), getRandomSoyad());;
+				}
+				
+				entityManager.getTransaction().commit();
+				verilerYaratildimi=true;
+			} catch (Exception e) {
+				entityManager.getTransaction().rollback();
+				e.printStackTrace();
+			}
+		
+		}
+	}
+
+	private String getRandomAd() {
+		int index=	NumberUtil.getRandomInt(adListesi.size()-1);		
+		return adListesi.get(index);
+	}
+	private String getRandomSoyad() {
+		Random random=new Random();
+		int index=	(int) ((random.nextDouble()*(adListesi.size()-1)));		
+		return soyadListesi.get(index);
+	}
+	
+
+	private Futbolcu futbolculariYarat(String ad, String soyad) {
+		Futbolcu item = new Futbolcu(ad, soyad);
+		entityManager.persist(item);
+		return item;
+	}
+
+
+	public String save() {
+		addMessage("jsf.selam");
+		System.out.println("getInstance().sec"+getSecilenFutbolcu());
+		return super.save();
+		
+	}
+	@Produces
+	@Named("objectList")
+	public List<Futbolcu> getObjectList() {
+		return objectList;
+	}
+	
+}
+	

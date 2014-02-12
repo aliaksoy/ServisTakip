@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+		<title>ServisIM</title>
+</h:head>
+<h:body>
+	
+	<h:form>
+
+	   <h:panelGrid columns="2" border="8">
+
+		<h:outputText value="Okul Adi:"/>
+		<p:inputText id="adi" value="#{adminController.aktifOkul.okulAdi}"/>
+
+		<h:outputText value="Okul Adres:"/>
+		<p:inputText id="adresi" value="#{adminController.aktifOkul.okulAdres}"/>
+		
+		<h:outputText value="AdresEnlem:"/>
+		<p:inputText id="enlem" value="#{adminController.aktifOkul.okulAdresEnlem}"/>
+
+		<h:outputText value="AdresBoylam:"/>
+		<p:inputText id="boylam" value="#{adminController.aktifOkul.okulAdresBoylam}"/>
+		
+		<h:outputText value="Telefon:"/>
+		<p:inputText id="telefon" value="#{adminController.aktifOkul.okulTelefon}"/>
+
+		<h:outputText value="KullanıcıAdi:"/>
+		<p:inputText id="kullaniciadi" value="#{adminController.aktifOkul.okulKullaniciAdi}"/>
+		
+		<h:outputText value="Şifre:"/>
+		<p:inputText id="sifre" value="#{adminController.aktifOkul.okulSifre}"/>
+		
+		<h:outputText value="E-posta:"/>
+		<p:inputText id="eposta" value="#{adminController.aktifOkul.okulMailAdres}"/>
+	
+		<h:outputText value="GSM Data:"/>
+		<p:inputText id="gsmdata" value="#{adminController.aktifOkul.okulunKullanacagiGSMDatasi}"/>
+						
+						
+		
+		<p:commandButton value="Okul Kaydet" actionListener="#{adminController.okulKaydet}"></p:commandButton>
+	    
+	   
+		
+		
+		</h:panelGrid>
+		
+		 <p:dataTable var="okul" id="okulList" value="#{okulController.okulListesi}">
+        
+        <p:column headerText="Adi">
+            <h:outputText value="#{okul.okulAdi}" />
+        </p:column>
+
+        <p:column headerText="Adres">
+            <h:outputText value="#{okul.okulAdres}" />
+        </p:column>
+        
+        <p:column headerText="Telefon">
+            <h:outputText value="#{okul.okulTelefon}" />
+        </p:column>
+        
+        <p:column headerText="KullanıcıAdi">
+        <h:outputText value="#{okul.okulKullaniciAdi}" />
+        </p:column>
+
+       </p:dataTable>
+	
+	</h:form>
+</h:body>
+</html>

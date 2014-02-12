@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<ui:debug />
+	<ui:insert name="metadata" />
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+
+
+		<title>#{msg['it.template.title']}</title>
+		<link href="files/css.css" rel="stylesheet" type="text/css"></link>
+		<link rel="stylesheet" type="text/css" href="files/a.css"></link>
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/c/a94545ac/ie.css" /><![endif]-->
+		<style type="text/css">
+#backgroundPopup {
+	display: none;
+	position: fixed;
+	_position: absolute; /* hack for internet explorer 6*/
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #000000;
+	z-index: 1;
+}
+
+#popupContent {
+	display: none;
+	position: fixed;
+	_position: absolute; /* hack for internet explorer 6*/
+	left: 50%;
+	top: 50%;
+	margin: -260px 0 0 -260px;
+	height: 520px;
+	width: 520px;
+	background: #FFFFFF;
+	border: 2px solid #cecece;
+	z-index: 2;
+	padding: 15px;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+#popupContent h1 {
+	margin-top: 0;
+}
+
+#popupContentClose {
+	cursor: pointer;
+	right: 8px;
+	top: 4px;
+	position: absolute;
+	font-weight: bold;
+	display: block;
+}
+</style>
+		<script type="text/javascript" src="files/a.js"></script>
+		<script type="text/javascript">
+
+var popupStatus = false;
+function loadPopup(){
+//if(!popupStatus){
+//$("#backgroundPopup").css("height", document.documentElement.clientHeight);
+//$("#backgroundPopup").css("opacity", "0.7").fadeIn("slow");
+//$("#popupContent").fadeIn("slow");
+//popupStatus = true;
+//}
+}
+function disablePopup(){
+if(popupStatus){
+$("#backgroundPopup").fadeOut("slow");
+$("#popupContent").fadeOut("slow");
+popupStatus = false;
+}
+}
+$(function() {
+loadPopup();
+$("#popupContentClose").click(function(){disablePopup();});
+$("#backgroundPopup").click(function(){disablePopup();});
+});
+
+
+</script>
+		<meta http-equiv="Content-Language" content="en-us"></meta>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		<meta name="description" content=""></meta>
+		<meta name="keywords" content=""></meta>
+
+	</h:head>
+	<body>
+		<div id="top-bar"></div>
+		<div id="header">
+		<!-- 
+			<div id="header-actions">
+				<div id="header-account">
+					<div class="icon lock"></div>
+					<div class="text">
+						<a href="underConstruction.xhtml">#{msg['it.template.registerOrLogin']}</a>
+					</div>
+				</div>
+				&nbsp;
+				<div class="clear"></div>
+			</div>
+			 -->
+			<div id="logo">
+				<a href="index.xhtml"><img src="files/logo.png" alt="IT" height="100"></img></a>
+			</div>
+
+			<ul id="nav">
+				<li class="home current"><a href="underConstruction.xhtml"><span>#{msg['it.menu.homePage']}</span></a></li>
+				<li class="signup"><a href="underConstruction.xhtml"><span>#{msg['it.menu.solutions']}</span></a></li>
+				<li class="faq"><a href="underConstruction.xhtml"><span>#{msg['it.menu.clients']}</span></a></li>
+				<li class="about"><a href="underConstruction.xhtml"><span>#{msg['it.menu.about']}</span></a></li>
+				<li class="contact"><a href="underConstruction.xhtml"><span>#{msg['it.menu.contactAndCareers']}</span></a></li>
+			</ul>
+		</div>
+		<div
+			style="text-align: center; background-color: #FCF8E3; border: 1px solid #FBEED5;">
+			<h3>#{msg['it.template.slogan']}</h3>
+		</div>
+		<div id="main">
+			<ui:insert name="main" />
+
+			<div id="footer">
+				<div class="content">
+					<div id="footer-nav">
+						© 2012 #{msg['it.footer.campanyDescription']}• <a href="underConstruction.xhtml">#{msg['it.menu.terms']}</a>
+						• <a href="underConstruction.xhtml">#{msg['it.menu.about']}</a> • <a
+							href="underConstruction.xhtml">#{msg['it.menu.contactAndCareers']}</a>
+
+						<br></br>
+						<br></br>
+						<p>#{msg['it.template.footerSlogan']}</p>
+					</div>
+					<ul id="footer-social">
+						<li><span class="icon twitter"></span><a
+							href="https://twitter.com/insanteknoloji">#{msg['it.menu.followFromTwitter']}</a></li>
+						<li><span class="icon facebook"></span><a
+							href="http://www.facebook.com/pages/%C4%B0nsan-Teknoloji-ve-Bili%C5%9Fim-Hizmetleri/225214170940659">#{msg['it.menu.followFromFacebook']}</a></li>
+					</ul>
+				</div>
+			</div>
+			</div>
+	</body>
+</f:view>
+</html>

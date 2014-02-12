@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/templateRight.xhtml">
+	
+
+
+	<ui:define name="content">
+
+	<p:carousel value="#{recipeHome.recipeList}" var="recipe" 
+            easing="easeOutBounce">  
+    <h:panelGrid columns="1" style="width:100%" cellpadding="5">  
+        <p:graphicImage value="#{recipe.imageId}"/>   
+          
+        <h:outputText value="#{recipe.name}" />  
+    </h:panelGrid>  
+</p:carousel>
+	</ui:define>
+</ui:composition>

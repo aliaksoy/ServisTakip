@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is not required if you don't need any extra configuration. -->
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+      http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+	<!-- Write your navigation rules here. You are encouraged to use CDI for 
+		creating @Named managed beans. -->
+
+	 <application>
+     	   <locale-config>
+     	       <default-locale>en</default-locale>
+     	       <supported-locale>en</supported-locale>
+     	       <supported-locale>tr_TR</supported-locale>
+     	       <supported-locale>ja_JP</supported-locale>
+     	   </locale-config>
+	   <resource-bundle>
+		<base-name>messages</base-name>
+		<var>msg</var>
+	   </resource-bundle>
+     </application>
+     
+   <navigation-rule>
+   <from-view-id>*</from-view-id>
+   <navigation-case>
+       <from-outcome>exception</from-outcome>
+       <to-view-id>/exception.xhtml</to-view-id>
+   </navigation-case>
+</navigation-rule>
+
+<factory>
+    <exception-handler-factory>jsf.JSFExceptionHandlerFactory</exception-handler-factory>
+</factory>
+
+<!-- 	<managed-bean> -->
+<!-- 		<managed-bean-name>futbolcuConverter</managed-bean-name> -->
+<!-- 		<managed-bean-class>org.sahin.converters.FutbolcuConverter</managed-bean-class> -->
+<!-- 		<managed-bean-scope>session</managed-bean-scope> -->
+<!-- 	</managed-bean> -->
+
+
+<!-- 	<converter> -->
+<!-- 		<converter-id>futbolcuConverter</converter-id> -->
+<!-- 		<converter-class>org.sahin.converters.FutbolcuConverter</converter-class> -->
+<!-- 		<managed-bean-scope>session</managed-bean-scope> -->
+<!-- 	</converter> -->
+<!-- 	<converter> -->
+<!-- 		<converter-id>baseObjectConverter</converter-id> -->
+<!-- 		<converter-class>org.sahin.converters.BaseObjectConverter</converter-class> -->
+<!-- 		<managed-bean-scope>session</managed-bean-scope> -->
+<!-- 	</converter> -->
+</faces-config>

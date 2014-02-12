@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/templateIT.xhtml">
+	
+
+
+	<ui:define name="main">
+
+		<div id="heading">
+			<div class="content">
+				<div class="text">
+					<div id="cycle">
+						<div style="" class="">
+							<h1>#{msg['it.index.slider.title1']}</h1>
+							<h2>#{msg['it.index.slider.detail1']}</h2>
+
+						</div>
+						<div class="" style="">
+							<h1>#{msg['it.index.slider.title2']}</h1>
+							<h2>#{msg['it.index.slider.detail2']}</h2>
+						</div>
+						<div class="active" style="opacity: 1;">
+							<h1>#{msg['it.index.slider.title3']}</h1>
+							<h2>#{msg['it.index.slider.detail3']}</h2>
+						</div>
+						<div class="" style="">
+							<h1>#{msg['it.index.slider.title4']}</h1>
+							<h2>#{msg['it.index.slider.detail4']}</h2>
+						</div>
+					</div>
+					<div>
+						<div class="icon bullet"></div>
+						<div class="icon bullet"></div>
+						<div class="icon bullet active"></div>
+						<div class="icon bullet"></div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="heading-bottom">
+			<div class="content">
+				<div class="button_wrap">
+					<div class="button green" onclick="window.location='/underConstruction.xhtml';">#{msg['it.index.signupNow']}</div>
+				</div>
+				<div class="button_wrap">
+					<div class="button grey"
+						onclick="window.location='/underConstruction.xhtml';">#{msg['it.index.signupNow']}</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div id="quotes">
+				<h2>#{msg['it.clients']}</h2>
+				
+				<div class="quote">
+					<p>#{msg['it.clients.turkcell']}</p>
+					<p class="byline">
+						<img
+							src="files/turkcell-logo.jpeg"></img>
+					</p>
+				</div>
+				<div class="quote last">
+					<p>#{msg['it.clients.vizyoneks']}</p>
+					<p class="byline">
+						<img
+							src="files/vizyonekslogo.png"></img>
+					</p>
+				</div>
+				<div class="quote">
+					<p>#{msg['it.clients.kayi']}</p>
+					<p class="byline">
+						<img height="75"
+							src="files/kayilogo.jpg"></img>
+					</p>
+				</div>
+			</div>
+			<!-- 
+			<div class="hr"></div>
+			<div id="how">
+				<h2>How GazeHawk Works</h2>
+				<div class="item">
+					<img
+						src="GazeHawk%20-%20Webcam%20Eye%20Tracking%20-%20Ad%20Testing%20and%20Optimization_dosyalar/how_1.png"></img>
+					<p>
+						<strong>1. You send us your URL or an<br></br>image you
+							want to test.
+						</strong>
+					</p>
+				</div>
+				<div class="icon green-right-arrow"></div>
+				<div class="item">
+					<img
+						src="GazeHawk%20-%20Webcam%20Eye%20Tracking%20-%20Ad%20Testing%20and%20Optimization_dosyalar/how_2.png"></img>
+					<p>
+						<strong>2. We send the link to our testers</strong><br></br> (or
+						use your own testers, all<br></br>they need is a webcam!)
+					</p>
+				</div>
+				<div class="icon green-right-arrow"></div>
+				<div class="item">
+					<img
+						src="GazeHawk%20-%20Webcam%20Eye%20Tracking%20-%20Ad%20Testing%20and%20Optimization_dosyalar/how_3.png"></img>
+					<p>
+						<strong>3. We send you the results in our<br></br>easy-to-use
+							dashboard
+						</strong>
+					</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="extra_info">
+			<div class="content">
+				<div class="text">
+					<h1>
+						Ready to get started? Click <strong>Get Started</strong> to see
+						pricing and sign up.
+					</h1>
+					<h3>
+						Not sure where to start? <a
+							href="http://www.gazehawk.com/contact/">Contact us</a>.
+					</h3>
+				</div>
+				<div class="button green" onclick="window.location='/signup/';">Get
+					Started</div>
+			</div>
+			<div class="clear"></div>
+			
+			 -->
+		</div>
+		
+
+	</ui:define>
+</ui:composition>
+

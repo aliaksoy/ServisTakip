@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<ui:debug />
+	<ui:insert name="metadata" />
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Primefaces Demo</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Denenmiş Ev Yemekleri, Tarifleri" />
+	<meta name="keywords" content="Denenmiş ev yemek tarifleri" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="fileRecipe/screen.css" media="screen" />
+		<link href="../slider/agile_carousel.css" rel="stylesheet" type="text/css" />
+<script src="../slider/agile_carousel.alpha.js"></script>
+
+
+<ui:insert name="head"></ui:insert>
+	</h:head>
+	<h:body  >
+	
+	
+<div id="header">
+	 <ui:include src="../../recipeHeader.xhtml" />
+</div>
+<div class="colmask threecol">
+	<div class="colmid">
+		<div class="colleft">
+			<div class="col1">
+				<ui:insert name="content">Ana Bolum</ui:insert>
+			</div>
+			<div class="col2">
+				<!-- Column 2 start <ui:include src="../../recipeLeft.xhtml" /> -->
+				
+			  
+				<!-- Column 2 end -->
+			</div>
+			<div class="col3">
+			<ui:include src="../../recipeLeft.xhtml" /> 
+				<!-- Column 3 end -->
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+<ui:insert name="footer" >
+	    	  <ui:include src="footerRecipe.xhtml" />
+	    	</ui:insert>	
+</div>
+
+
+	
+
+
+	</h:body>
+</f:view>
+</html>

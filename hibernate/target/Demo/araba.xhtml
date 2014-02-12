@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" template="mainTemplate.xhtml">
+
+
+
+	<ui:define name="content">
+
+
+		<f:metadata>
+			<f:viewParam name="arabaGonderId"
+				value="#{sahibindenArabaController.arabaId}" />
+			<f:event type="preRenderView"
+				listener="#{sahibindenArabaController.onPageLoad()}" />
+
+
+
+		</f:metadata>
+	
+	
+	sad#{sahibindenArabaController.arabaId}sadad
+	
+	
+	
+	<h:panelGrid columns="2">
+			<p:graphicImage rendered="#{sahibindenArabaController.arabaId!=null}"
+				height="400" value="#{sahibindenArabaController.instance.resim1}" />
+
+
+
+
+
+			<h:panelGrid columns="2">
+				<h:panelGrid columns="2"
+					rendered="#{sahibindenArabaController.arabaId!=null}">
+ #{sahibindenArabaController.arabaId} numaralı araba guncelleniyor
+</h:panelGrid>
+				<h:outputText value=""
+					rendered="#{sahibindenArabaController.arabaId!=null}" />
+				<h:outputText value="İlan Tarihi" />
+				<p:calendar value="#{sahibindenArabaController.instance.ilanTarihi}"
+					mindate="#{sahibindenArabaController.simdi}" />
+				<h:outputText value="Id" />
+				<p:inputText id="id"
+					value="#{sahibindenArabaController.instance.id}" required="true"
+					requiredMessage="*  Lütfen id alanını doldurunuz."></p:inputText>
+				<h:outputText value="Marka" />
+				<p:inputText id="marka"
+					title="Buraya Araba Markasını girebilirsiniz?"
+					value="#{sahibindenArabaController.instance.marka}" required="true"
+					requiredMessage="*  Lütfen marka alanını doldurunuz."></p:inputText>
+
+
+
+
+
+
+				<h:outputText value="Resim" />
+				<p:inputText id="resim"
+					value="#{sahibindenArabaController.instance.resim1}"
+					required="true"
+					requiredMessage="*  Lütfen resim alanını doldurunuz."></p:inputText>
+
+
+
+				<h:outputText value="Model" />
+				<p:spinner id="model" min="#{sahibindenArabaController.minModelYil}"
+					value="#{sahibindenArabaController.instance.model}" required="true"
+					requiredMessage="*  Lütfen marka alanını doldurunuz.">
+				</p:spinner>
+
+
+				<h:outputText value="Motor Gücü" />
+				<p:spinner value="#{sahibindenArabaController.instance.motorGucu}" />
+
+				<h:outputText value="Renk" />
+				<p:inputText id="renk"
+					value="#{sahibindenArabaController.instance.renk}" required="true"
+					requiredMessage="*  Lütfen renk alanını doldurunuz."></p:inputText>
+
+				<h:outputText value="Takas Yapılabilir mi?" />
+				<p:selectBooleanCheckbox
+					value="#{sahibindenArabaController.instance.takas}" />
+
+				<h:outputText value="İkinci El" />
+				<p:selectBooleanCheckbox
+					value="#{sahibindenArabaController.instance.ikinciEl}">
+					<p:ajax update="@form" process="@form"
+						listener="#{sahibindenArabaController.ikinciElKontrol}" />
+
+				</p:selectBooleanCheckbox>
+
+
+
+
+				<h:outputText value="Detay" />
+				<p:editor value="#{sahibindenArabaController.instance.detay}"
+					width="100" />
+
+
+
+
+				<p:commandButton ajax="false" action="arabaList?faces-redirect=true"
+					rendered="#{sahibindenArabaController.arabaId==null}" value="Ekle"
+					actionListener="#{sahibindenArabaController.ekle}"></p:commandButton>
+
+				<p:commandButton ajax="false" action="arabaList?faces-redirect=true"
+					rendered="#{sahibindenArabaController.arabaId!=null}"
+					value="Guncelle" actionListener="#{sahibindenArabaController.ekle}"></p:commandButton>
+
+
+
+				<p:commandButton ajax="false"
+					action="#{sahibindenArabaController.ekleYadaKal}"
+					value="Ekle yada kal"></p:commandButton>
+
+
+			</h:panelGrid>
+
+
+
+		</h:panelGrid>
+		<p:tooltip for="marka" showEvent="focus" hideEvent="blur" />
+
+
+	</ui:define>
+</ui:composition>

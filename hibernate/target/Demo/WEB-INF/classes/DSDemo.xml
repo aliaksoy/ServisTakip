@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE datasources PUBLIC "-//JBoss//DTD JBOSS JCA Config 1.5//EN"
+    "http://www.jboss.org/j2ee/dtd/jboss-ds_1_5.dtd">
+<datasources>
+    <!-- Installs an in-memory data source on JBoss AS having the same name as the default data source in GlassFish -->
+        <local-tx-datasource>
+        <jndi-name>DsDemo</jndi-name>
+        <use-java-context>true</use-java-context>
+		<connection-url>jdbc:mysql://localhost:3306/myproject</connection-url>
+ 		 <driver-class>com.mysql.jdbc.Driver</driver-class>
+    	 <min-pool-size>1</min-pool-size>
+     	 <max-pool-size>20</max-pool-size>
+     	 <user-name>umyproject</user-name>
+     	 <password>pmyproject</password>     
+ 		 </local-tx-datasource>
+</datasources>

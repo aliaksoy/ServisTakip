@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<ui:insert name="metadata" />
+	<h:head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>SAHIN</title>
+
+	</h:head>
+	<h:body>
+		<div id="wrapper">
+			<p:graphicImage height="200"
+				value="http://www.trwikipedia.com/wp-content/uploads/2013/03/sahibinden.com-logo.jpg" />
+
+
+			<h:form>
+			
+			
+				<p:messages id="messages" showDetail="false" closable="true" />
+				<p:growl id="growl" showDetail="false" sticky="false" />
+				
+					<ui:insert name="content">	</ui:insert>
+				
+			
+				
+			</h:form>
+		</div>
+
+	</h:body>
+</f:view>
+</html>

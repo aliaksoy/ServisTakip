@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view  locale="#{localeChanger.selectedLocale}" >
+	<ui:debug />
+	<ui:insert name="metadata" />
+	<h:head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Las Vegas by Free Css Templates</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="/resources/images/bg/big/web-design-beach-twitter-background.jpg http://fc07.deviantart.net/fs44/i/2009/075/b/0/Window_Twitter_Background_by_ArtandMore.jpg" />
+		<link href="resources/css/defaultHtml.css" rel="stylesheet" type="text/css" />
+		<ui:insert name="js"/>
+		<ui:insert name="css"/>
+	</h:head>
+	<h:body   style="background: url(/resources/images/bg/big/City_Twitter_Background_by_designonstop.jpg) no-repeat top center;" >
+		<div id="wrapper">
+		<div id="menu">
+			<ui:include src="templateMenu.xhtml">
+	        	<ui:param name="projectName" value="Demo"/>
+	    	</ui:include>
+    	</div>
+	<div id="header">
+		<h1><a href="#">Sahin</a></h1>
+		<h2><a href="http://www.freecsstemplates.org/">Mustafa Sahin AYDIN</a></h2>
+	</div>
+	<div id="pages">
+		<h2>Pages</h2>
+		<ul>
+			<li class="active"><a id="index.xhtml" href="index.xhtml">AnaSayfa</a></li>
+			<li><a id="page2" href="tanimlama.xhtml"> Tanımlama  </a></li>
+			<li><a id="page4" href="hakkimda.xhtml">Hakkımda</a></li>
+			<li><a id="page5" href="iletisim.xhtml">İletişim</a></li>
+		</ul>
+		
+	</div>
+	<div id="content" >
+	    <div id="posts">
+		
+			<div class="post"  style="background: url(/resources/images/bg/bg_kahve.png) repeat left center;">
+			<ui:insert name="content">Ana Bolum</ui:insert>
+			
+			</div>
+			
+		</div>
+		
+		<div id="categories" class="boxed">
+			<h2 class="heading">Categories</h2>
+			<div class="content">
+				<ul>
+					<li class="first"><a href="#">Quisque vestibulum</a></li>
+					<li><a href="#">Sed a nisl a lacus</a></li>
+					<li><a href="#">Quisque sagittis</a></li>
+					<li><a href="#">Etiam volutpat</a></li>
+					<li><a href="#">In aliquet hendrerit</a></li>
+					<li><a href="#">Suspendisse iaculis</a></li>
+					<li><a href="#">Nam vel risus at</a></li>
+					<li><a href="#">Praesent sit amet</a></li>
+					<li><a href="#">Quisque vestibulum</a></li>
+					<li><a href="#">In aliquet hendrerit</a></li>
+					<li><a href="#">Suspendisse iaculis</a></li>
+					<li><a href="#">Nam vel risus at</a></li>
+					<li><a href="#">Praesent sit amet</a></li>
+					<li><a href="#">Quisque vestibulum</a></li>
+				</ul>
+			</div>
+			<h2 class="heading">Blogroll</h2>
+			<div class="content">
+				<ul>
+					<li class="first"><a href="#">AnotherFriendlySite.net</a></li>
+					<li><a href="#">CoolSite.com</a></li>
+					<li><a href="#">MyBestFriend.com</a></li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	<div id="footer">
+		<p>Copyright &copy; 2006 Las Vegas. Designed by <a href="http://www.freecsstemplates.org/"><strong>Free CSS Templates</strong></a></p>
+	</div>
+</div>
+
+	</h:body>
+</f:view>
+</html>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/templateTestFM.xhtml">
+	<ui:define name="metadata">
+
+		<f:event type="preRenderView" listener="#{questionHome.correctQuestions}" /> 
+	</ui:define>
+<ui:define name="js">
+	<script src="#{request.contextPath}/resources/js/jquery.js" />
+	
+<script src="#{request.contextPath}/starter-kit/js/libs/handlebars-1.0.0.beta.6.js"></script>
+		<script src="#{request.contextPath}/taffyDb/taffy.js" />
+		<script src="#{request.contextPath}/taffyDb/questions.js" />
+
+		<script>
+
+		
+		
+		
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	 <script> 
+	 
+	 
+	 var userAnswerDiv; 
+	 var answer1=false;
+	 var answer2=false;
+	 var answer3=false;
+	 var answer4=false;
+	 
+	var data;
+	var activeQuestion = new Object();
+	activeQuestion.question = "ccc";
+	 activeQuestion=questions().filter().first();
+
+ data = {
+		 "activeQuestion":activeQuestion,"showAnswer":true,"answer1":answer1,"answer2":answer2,"answer3":answer3,"answer4":answer4
+    
+   
+};
+
+
+ function nextQuestion()
+	{
+	 
+	 
+	  answer1=false;
+	  answer2=false;
+	  answer3=false;
+	  answer4=false;
+	 var randomnumber=Math.floor(Math.random()*questions().count())
+
+
+	 var nextId = randomnumber+questions().count();
+	 activeQuestion=questions().filter({"id":nextId}).first();
+	
+	 updateDiv(activeQuestion);
+	}
+
+ function giveAnswer()
+	{
+	  answer1=(activeQuestion.answer1==activeQuestion.correctAnswer);
+	  answer2=(activeQuestion.answer2==activeQuestion.correctAnswer);
+	  answer3=(activeQuestion.answer3==activeQuestion.correctAnswer);
+	  answer4=(activeQuestion.answer4==activeQuestion.correctAnswer);
+
+
+	
+	 updateDiv(activeQuestion);
+	 
+	 if(userAnswerDiv!=null){
+		 
+		 userAnswerDiv.addClass('question');
+		 userAnswerDiv.className='question';
+
+	 }
+	}
+ 
+ function applyAnswer(obj)
+	{
+	
+	 if(userAnswerDiv!=null){
+		 userAnswerDiv.removeClass('userAnswer');
+		 userAnswerDiv.addClass('answer');
+		 
+	 }
+	obj.addClass('userAnswer');
+	userAnswerDiv=obj;
+	
+	}
+ function updateDiv(activeQuestion)
+	{
+ var source = $("#mytemplate").html();
+
+ var template = Handlebars.compile(source);
+ var data;
+	
+
+
+data = {
+		 "activeQuestion":activeQuestion, "showAnswer":true,"answer1":answer1,"answer2":answer2,"answer3":answer3,"answer4":answer4
+ 
+
+};
+ $("#cont").html(template(data));
+
+ 
+ 
+	}  
+
+
+
+
+ 
+ 
+</script>
+
+
+
+<style>
+
+
+
+body {
+    color: #3E3F3E;
+    font-family: "Lucida Grande",Tahoma,Arial,Sans-serif,sans;
+    font-size: 62.5%;
+    text-align: center;
+}
+
+
+div.question {
+border: 1px solid black;
+background-color:red;
+background-image: url(#{request.contextPath}/resources/images/bg/headerBg.gif);
+ -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+div.answer {
+border: 1px solid black;
+background-color:red;
+background-image: url(#{request.contextPath}/resources/images/bg/code_background.gif);
+ -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+div.questionCorrect {
+border: 1px solid black;
+background-color:red;
+background-image: url(#{request.contextPath}/resources/images/bg/pink.gif);
+ -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+div.userAnswer {
+border: 1px solid black;
+background-image: url(#{request.contextPath}/resources/images/bg/pink.gif);
+ -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+
+div.answer:hover
+{
+background-image: url(#{request.contextPath}/resources/images/bg/headerBg.gif);
+}
+
+
+</style>
+	
+		</ui:define>
+	<ui:define name="content">
+		<h:form id="form">
+		<p:button type="button" value="Sonraki Soru" onclick="nextQuestion();return false;"></p:button> 
+				<p:button type="button" value="Dogru Cevap" onclick="giveAnswer();return false;"></p:button> 
+			<div id="cont" class="rounded-corners">
+
+</div>
+
+
+</h:form>
+<script id="mytemplate" type="text/x-handlebars-template">
+
+
+
+
+ {{#if activeQuestion}}
+
+
+
+<div class="question" id="question">
+<h2>{{activeQuestion.question}}</h2><br/>
+</div>
+
+
+
+
+
+
+
+
+
+
+{{#if answer1 }}
+<div class="questionCorrect" id="answer1">
+<h5>{{activeQuestion.answer1}}</h5><br/>
+</div>
+{{else}}
+<div class="answer" onclick="applyAnswer($(this));" id="answer1">
+<h5>{{activeQuestion.answer1}}</h5><br/>
+</div>
+{{/if}}
+
+
+{{#if answer2 }}
+<div class="questionCorrect" id="answer2">
+<h5>{{activeQuestion.answer2}}</h5><br/>
+</div>
+{{else}}
+<div class="answer" onclick="applyAnswer($(this));" id="answer2">
+<h5>{{activeQuestion.answer2}}</h5><br/>
+</div>
+{{/if}}
+
+
+
+{{#if answer3 }}
+<div class="questionCorrect" id="answer3">
+<h5>{{activeQuestion.answer3}}</h5><br/>
+</div>
+{{else}}
+<div class="answer" onclick="applyAnswer($(this));" id="answer3">
+<h5>{{activeQuestion.answer3}}</h5><br/>
+</div>
+{{/if}}
+
+{{#if answer4 }}
+<div class="questionCorrect" id="answer4">
+<h5>{{activeQuestion.answer4}}</h5><br/>
+</div>
+{{else}}
+<div class="answer" onclick="applyAnswer($(this));" id="answer4">
+<h5>{{activeQuestion.answer4}}</h5><br/>
+</div>
+{{/if}}
+
+
+
+	 {{/if}}
+</script>
+		 <script> 
+	
+
+updateDiv();
+ 
+
+
+
+
+
+
+</script>
+	
+
+	</ui:define>
+</ui:composition>
+	

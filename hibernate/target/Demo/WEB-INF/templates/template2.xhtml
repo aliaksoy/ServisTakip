@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<ui:debug />
+	<ui:insert name="metadata" />
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	</h:head>
+	<h:body  style="background:url(http://pic.pbsrc.com/homepage/textures/hp_quad_bg_texture_v2.png) repeat">
+		<h:panelGroup id="page" layout="block">
+			<h:panelGroup id="header" layout="block">
+				<h1>
+					<a href="home.jsf">Anasayfa</a>
+				</h1>
+				
+			</h:panelGroup>
+			<h:panelGroup id="container" layout="block">
+				<h:panelGroup id="sidebar" layout="block">
+
+				</h:panelGroup>
+				<h:panelGroup id="content" layout="block">
+
+					<ui:insert name="content">Ana Bolum</ui:insert>
+				</h:panelGroup>
+			</h:panelGroup>
+			<h:panelGroup id="footer" layout="block">TestFooter</h:panelGroup>
+		</h:panelGroup>
+
+	</h:body>
+</f:view>
+</html>

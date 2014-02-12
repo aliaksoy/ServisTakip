@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+	<ui:composition>
+
+		<h3>Denenmiş ev yemekleri olarak tüm hanımların tariflerini
+			bekliyoruz.</h3>
+		<ul>
+			<li><a href="underConstruction.xhtml" class="active">Ana <span>Sayfa</span></a></li>
+			<li><a href="underConstruction.xhtml">Yemekler </a></li>
+			<li><a href="underConstruction.xhtml">Tatlılar</a></li>
+			<li><a href="underConstruction.xhtml">Çorbalar</a></li>
+			<li><a href="underConstruction.xhtml">Diğer Konular</a></li>
+			<li><a href="underConstruction.xhtml">Tarifini <span>Gönder</span></a></li>
+			<li><h:outputLabel class="active" value="#{msg['welcome']} #{loginAuthenticator.authenticatedUser.name}" rendered="#{loginAuthenticator.authenticatedUser!=null}" /></li>
+		</ul>
+
+
+
+
+
+
+
+		<p id="layoutdims">Bazı şeyleri denemeden bilemezsiniz. Deneyin ve
+			deneyimlerinizi bizimle paylaşın.</p>
+
+	</ui:composition>
+</body>
+</html>

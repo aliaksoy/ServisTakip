@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/templateRecipe.xhtml">
+	<ui:define name="metadata">
+
+		<f:event type="preRenderView" listener="#{recipeHome.onPageLoad}" />
+	</ui:define>
+
+
+	<ui:define name="content">
+
+		<h:form>
+			<p:messages id="messages" />
+			<h:panelGrid id="pnGrid" columns="1">
+
+				<h:outputLabel value="#{msg['recipe.Id']}"
+					rendered="#{recipeHome.managed}" />
+				<p:inputText value="#{recipeHome.instance.id}"
+					rendered="#{recipeHome.managed}" />
+
+				<h:outputLabel value="#{msg['recipe.name']}" />
+				<p:inputText value="#{recipeHome.instance.name}" />
+
+				<h:outputLabel value="#{msg['recipe.ingredients']}" />
+				<p:editor value="#{recipeHome.instance.ingredients}" width="600" />
+
+				<h:outputLabel value="#{msg['recipe.description']}" />
+
+				<p:editor id="editor" value="#{recipeHome.instance.description}"
+					width="600" />
+				<h:outputLabel value="#{msg['recipe.imageDrag']}" />
+				<p:fileUpload fileUploadListener="#{recipeHome.handleFileUpload}" style="width:700px;" />
+
+				<p:commandButton value="#{msg['recipe.send']}"
+					actionListener="#{recipeHome.save}" update="@form"></p:commandButton>
+			</h:panelGrid>
+			
+			
+			
+			<p:dataTable var="tempVar"  paginator="true" rendered="#{recipeHome.instance!=null and !recipeHome.instance.photos.isEmpty()}"
+					value="#{recipeHome.instance.photos}"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					selectionMode="single" rows="10" rowKey="#{tempVar.id}">
+					
+					
+					<p:column>
+					<p:graphicImage  value="/FITIFITI?typeId=101&#38;imageId=#{tempVar.path}" /> 
+					
+			</p:column>
+			</p:dataTable>
+			
+		</h:form>
+
+	</ui:define>
+</ui:composition>

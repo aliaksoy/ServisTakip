@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/templateHtml.xhtml">
+	<ui:define name="metadata"  >
+	
+	</ui:define>
+
+
+	<ui:define name="content">
+		
+		<h:form>
+		<h:outputLabel rendered="#{student4Home.instance.id!=null}"  value="Başvurunuz alındı. En yakın zamanda sizi gelişmelerden haberdar edeceğiz."></h:outputLabel>
+		
+		<p:messages></p:messages>
+		<h:panelGrid columns="2">
+		<h:outputLabel  value="*İsim"></h:outputLabel>
+		<p:inputText value="#{student4Home.instance.name}" required="true" requiredMessage=" *Lütfen isim alanını giriniz " />
+		<h:outputLabel  value="*Mail adresi"></h:outputLabel>
+		<p:inputText value="#{student4Home.instance.emailAdress}" required="true" requiredMessage=" *Lütfen mail adres alanını giriniz "/>
+		<h:outputLabel  value="*Telefon"></h:outputLabel>
+		<p:inputText value="#{student4Home.instance.phoneNumber}" required="true" requiredMessage=" *Lütfen telefon numarası alanını giriniz "/>
+		<h:outputLabel  value="*Üniversite"></h:outputLabel>
+		<p:inputText value="#{student4Home.instance.university}" required="true" requiredMessage=" *Lütfen üniversite alanını giriniz "/>
+		<h:outputLabel  value="*Bölüm"></h:outputLabel>
+		<p:inputText value="#{student4Home.instance.department}" required="true" requiredMessage=" *Lütfen bölüm alanını giriniz " />
+		<h:outputLabel  value="Eklemek istediğiniz varsa not"></h:outputLabel>
+		<p:inputTextarea rows="2" cols="60" value="#{student4Home.instance.department}"/>
+		<p:commandButton update="@form" disabled="#{student4Home.instance.id!=null}" actionListener="#{student4Home.saveMe}" value="Kayıt"  ></p:commandButton>
+		
+		
+		</h:panelGrid>
+		
+		
+		</h:form>
+
+	</ui:define>
+</ui:composition>

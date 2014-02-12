@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Sahibinden araba tanımlama</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<p:button outcome="araba" value="Geridon" icon="ui-icon-star">
+			<f:param name="arabaId" value="20" />
+		</p:button>
+		<p:messages id="messages" showDetail="false" closable="true" />
+		<p:growl id="growl" showDetail="false" sticky="false" />
+
+
+		<h:panelGrid columns="1">
+
+
+			<p:dataTable var="araba"
+				value="#{sahibindenArabaController.objectList}">
+				<p:column headerText="ID">
+
+					<p:button outcome="araba" value="Guncelle (#{araba.id})" icon="ui-icon-pencil">
+						<f:param name="arabaGonderId" value="#{araba.id}" />
+						<f:param name="kullaniciAdi" value="SAHIN" />
+						<f:param name="yetki" value="ADMIN" />
+					</p:button>
+					
+					
+					
+				</p:column>
+				<p:column headerText="Resim">
+					<p:graphicImage rendered="#{araba.resim1!=null}"  height="40"
+ value="#{araba.resim1}" />  
+ 					<p:graphicImage rendered="#{araba.resim1==null}"  height="40"
+ value="http://bilisim.gediztml.com/wp-content/uploads/2013/04/yok.gif" />  
+ 
+				</p:column>
+				
+				
+				
+				<p:column headerText="Model">
+					<h:outputText value="#{araba.model}" title="#{araba.detay}" />
+				</p:column>
+				<p:column headerText="Marka" sortBy="marka">
+					<h:outputText value="#{araba.marka}" />
+				</p:column>
+				<p:column headerText="Motor Gücü" sortBy="motorGucu">
+					<h:outputText value="#{araba.motorGucu}" />
+				</p:column>
+				<p:column headerText="Renk" sortBy="renk">
+					<h:outputText value="#{araba.renk}" />
+				</p:column>
+				<p:column headerText="İkinciEl" sortBy="ikinciEl">
+					<p:selectBooleanCheckbox value="#{araba.ikinciEl}" disabled="true" />
+				</p:column>
+				<p:column headerText="Takas" sortBy="takas">
+					<p:selectBooleanCheckbox value="#{araba.takas}" disabled="true" />
+				</p:column>
+
+				<p:column headerText="ilan Tarihi" sortBy="ilanTarihi">
+					<p:calendar value="#{araba.ilanTarihi}" disabled="true" />
+				</p:column>
+
+			</p:dataTable>
+
+
+		</h:panelGrid>
+
+
+
+
+
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,8 @@
+127.0.0.1 - - [12/Feb/2014:12:40:09 +0200] "GET /admin.xhtml HTTP/1.1" 200 5489 http-bio-8080-exec-1 549
+127.0.0.1 - - [12/Feb/2014:12:40:10 +0200] "GET /javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces&v=4.0-SNAPSHOT HTTP/1.1" 304 - http-bio-8080-exec-4 127
+127.0.0.1 - - [12/Feb/2014:12:40:10 +0200] "GET /javax.faces.resource/primefaces.js.xhtml?ln=primefaces&v=4.0-SNAPSHOT HTTP/1.1" 304 - http-bio-8080-exec-5 62
+127.0.0.1 - - [12/Feb/2014:12:40:10 +0200] "GET /javax.faces.resource/jquery/jquery-plugins.js.xhtml?ln=primefaces&v=4.0-SNAPSHOT HTTP/1.1" 304 - http-bio-8080-exec-6 62
+127.0.0.1 - - [12/Feb/2014:12:40:10 +0200] "GET /javax.faces.resource/primefaces.css.xhtml?ln=primefaces&v=4.0-SNAPSHOT HTTP/1.1" 304 - http-bio-8080-exec-3 149
+127.0.0.1 - - [12/Feb/2014:12:40:10 +0200] "GET /javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo HTTP/1.1" 304 - http-bio-8080-exec-2 179
+127.0.0.1 - - [12/Feb/2014:12:40:10 +0200] "GET /favicon.ico HTTP/1.1" 404 988 http-bio-8080-exec-2 3
+127.0.0.1 - - [12/Feb/2014:12:41:26 +0200] "POST /admin.xhtml;jsessionid=2BBF5042B2FB97517D1521255F9A5D84 HTTP/1.1" 200 190 http-bio-8080-exec-2 63784

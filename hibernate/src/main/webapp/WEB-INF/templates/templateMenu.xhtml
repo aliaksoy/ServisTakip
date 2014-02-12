@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:form>
+
+	<h:panelGrid columns="3">
+
+
+
+
+		<p:menubar autoSubmenuDisplay="true">
+			<p:submenu label="File" icon="ui-icon ui-icon-document">
+				<p:submenu label="New" icon="ui-icon ui-icon-contact">
+					<p:menuitem value="Project" url="yeniSayfa.jsf" helpText="CTRL+N" />
+					<p:menuitem value="Other" url="#" helpText="CTRL+O" />
+				</p:submenu>
+				<p:menuitem value="Open" url="#" />
+				<p:menuitem value="Quit" url="#" />
+			</p:submenu>
+
+			<p:submenu label="Edit" icon="ui-icon ui-icon-pencil">
+				<p:menuitem value="Undo" url="#"
+					icon="ui-icon ui-icon-arrowreturnthick-1-w" helpText="CTRL+Z"></p:menuitem>
+				<p:menuitem value="Redo" url="#"
+					icon="ui-icon ui-icon-arrowreturnthick-1-e" helpText="CTRL+Y"></p:menuitem>
+			</p:submenu>
+
+			<p:submenu label="Help" icon="ui-icon ui-icon-help">
+				<p:menuitem value="Contents" url="#" />
+				<p:submenu label="Search" icon="ui-icon ui-icon-search">
+					<p:submenu label="Text">
+						<p:menuitem value="Workspace" url="#" />
+					</p:submenu>
+					<p:menuitem value="File" url="#" />
+				</p:submenu>
+			</p:submenu>
+
+			<p:submenu label="Actions" icon="ui-icon ui-icon-gear">
+				<p:submenu label="Ajax" icon="ui-icon ui-icon-refresh">
+					<p:menuitem value="Save" actionListener="#{buttonBean.save}"
+						icon="ui-icon ui-icon-disk"  />
+					<p:menuitem value="Update" actionListener="#{buttonBean.update}"
+						icon="ui-icon ui-icon-arrowrefresh-1-w"  />
+				</p:submenu>
+				<p:submenu label="Non-Ajax" icon="ui-icon ui-icon-newwin">
+					<p:menuitem value="Delete" actionListener="#{buttonBean.delete}"
+						icon="ui-icon ui-icon-close"  ajax="false" />
+				</p:submenu>
+			</p:submenu>
+
+			<p:menuitem value="Quit" url="http://www.primefaces.org"
+				icon="ui-icon ui-icon-close" />
+		</p:menubar>
+		<h:outputText value="#{msg['prompt.lang']}" id="dil" />
+		<h:panelGrid columns="4">
+			<p:commandLink
+				actionListener="#{localeChanger.changeLocale(localeChanger.localeTurkish.localeKey)}"
+				update="dil" ajax="true">
+				<p:graphicImage value="#{localeChanger.localeTurkish.imagePath}"
+					width="30px" height="30px" />
+			</p:commandLink>
+			<p:commandLink
+				actionListener="#{localeChanger.changeLocale(localeChanger.localeEnglish.localeKey)}"
+				update="dil" ajax="true">
+				<p:graphicImage value="#{localeChanger.localeEnglish.imagePath}"
+					width="30px" height="30px" />
+			</p:commandLink>
+			<p:commandLink
+				actionListener="#{localeChanger.changeLocale(localeChanger.localeJapanase.localeKey)}"
+				update="dil" ajax="true">
+				<p:graphicImage value="#{localeChanger.localeJapanase.imagePath}"
+					width="30px" height="30px" />
+			</p:commandLink>
+		</h:panelGrid>
+	</h:panelGrid>
+</h:form>
+</html>
