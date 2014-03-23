@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+
+import org.sahin.persistence.DataRepository;
+import org.sahin.persistence.EntityManagerDao;
 
 import com.aractakipyazilimlari.model.Ogrenci;
 import com.aractakipyazilimlari.model.Okul;
@@ -14,11 +19,28 @@ import com.aractakipyazilimlari.model.Sirket;
 @SessionScoped
 public class OkulController implements Serializable {
 	
+	
+	private Okul aktifOkul =new Okul();
+	
+	@Inject
+	protected EntityManagerDao entityManagerDao;
+	@Inject
+	@DataRepository
+	protected EntityManager entityManager;
+	
+	
 	private List<Okul> okulListesi = new ArrayList<Okul>();
 	private List<Servis>okulunServisListesi =new ArrayList<Servis>();
 	private Sirket okulunAnlasmaliSirketi;
 	private List<Ogrenci>okulunOgrenciListesi= new ArrayList<Ogrenci>();
 	
+	
+	public Okul getAktifOkul() {
+		return aktifOkul;
+	}
+	public void setAktifOkul(Okul aktifOkul) {
+		this.aktifOkul = aktifOkul;
+	}
 	
 	public List<Okul> getOkulListesi() {
 		return okulListesi;
@@ -45,6 +67,13 @@ public class OkulController implements Serializable {
 		this.okulunOgrenciListesi = okulunOgrenciListesi;
 	}
 	
+	
+
+	public void okulKaydet() {
+		entityManagerDao.createObject(getAktifOkul());
+		aktifOkul=new Okul();
+		System.out.println("Okul eklendii...");
+	};
 	
 	
 

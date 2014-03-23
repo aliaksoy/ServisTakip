@@ -264,15 +264,6 @@ public class Ogrenci{
 	}
 
 
-	// ********************************************************//
-
-	public void veliTelefonGuncelle(Ogrenci ogreniKimlikNo) {};
-
-	public void aranmaZamaniniDegistir(Ogrenci ogreniKimlikNo){};
-	
-	public void ogrencininOkulaGitmeyeceginiBildir(Ogrenci ogreniKimlikNo){};
-	
-	public void sikayetOneriBildir(){};
 	
 	// ********************************************************//
 

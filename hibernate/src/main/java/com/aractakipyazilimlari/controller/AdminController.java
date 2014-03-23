@@ -1,4 +1,5 @@
 package com.aractakipyazilimlari.controller;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +21,7 @@ public class AdminController implements Serializable {
 
 	
 	
-	@Inject
-	protected EntityManagerDao entityManagerDao;
-	@Inject
-	@DataRepository
-	protected EntityManager entityManager;
+
 	
 	private List<Admin> yetkiliListesi = new ArrayList<Admin>();
 	// ********************************************************//
@@ -49,11 +46,6 @@ public class AdminController implements Serializable {
 	// ********************************************************//
 
 
-	public void okulKaydet() {
-		entityManagerDao.createObject(getAktifOkul());
-		aktifOkul=new Okul();
-		System.out.println("Okul eklendii...");
-	};
 
 
 

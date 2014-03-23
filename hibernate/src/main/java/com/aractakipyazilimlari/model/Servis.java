@@ -137,17 +137,7 @@ public class Servis {
 	}
 	
 
-	//********************************************************//
 
-	public void veliTelefonunaSmsAt(){};
-	
-	public void serviseBasla(){};
-	
-	public void serviseCikmamaDurumunuSirketeIlet(){};
-	
-	public void servisHizBilgisiGonder(){};
-	
-	public void servisKonumBigisiGonder(){};
 	
 
 	//********************************************************//

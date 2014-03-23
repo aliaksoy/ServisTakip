@@ -156,14 +156,6 @@ public class Sirket {
 		this.sirketListesi = sirketListesi;
 	}
 
-	// ********************************************************//
-	public void servisEkle(Servis plaka){};
-	public void servisSil(Servis plaka){};
-	public void servisGuncelle(Servis plaka){};
-	
-	public void ogrenciEkle(Ogrenci ogreniID) {};
-	public void ogrenciSil(Ogrenci ogreniID) {};
-	public void ogrenciGuncelle(Ogrenci ogreniID) {};
 
 	// ********************************************************//
 	
